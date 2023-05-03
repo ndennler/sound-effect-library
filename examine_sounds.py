@@ -12,10 +12,12 @@ import pandas as pd
 # lengths = []
 
 names = []
-for fname in tqdm(os.listdir('spectrograms')):
+for fname in tqdm(os.listdir('uniform_audio')):
     names.append(fname)
 
-pd.DataFrame(names).to_csv('files.csv')
+pd.DataFrame(names, columns=['fname']).to_csv('data/files.csv')
+
+print(f'updated {len(names)} files.')
 # print(len(lengths))
 # print(np.mean(lengths))
 # print(np.sum(np.array(lengths) > 6))

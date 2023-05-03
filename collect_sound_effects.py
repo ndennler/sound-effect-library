@@ -22,7 +22,7 @@ for page_num in tqdm(range(1,13)):
 
         headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0"}
         try:
-            with open(f"audio_files/{fname}", 'wb') as f:
+            with open(f"raw_audio_files/{fname}", 'wb') as f:
                 f.write(requests.get(f"https://notificationsounds.com{filename['src']}", headers=headers).content)
         except Exception as e:
             print(e)
